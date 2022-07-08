@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="false" class="ion-padding">
+    <ion-icon slot="start" icon="restaurant"></ion-icon >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Restaurantes catalogados</ion-card-subtitle>
+        <ion-card-title>{{restaurantes?.length ? restaurantes?.length: 0}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-item>
+
+  <ion-item lines="false" class="ion-padding">
+    <ion-icon slot="start" icon="man"></ion-icon >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Chefes catalogados</ion-card-subtitle>
+        <ion-card-title>{{chefes?.length ? chefes?.length : 0}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-item>
+
+  <ion-item lines="false" class="ion-padding">
+    <ion-icon slot="start" icon="list"></ion-icon >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Tipos de Cozinha catalogados</ion-card-subtitle>
+        <ion-card-title>{{tipos?.length ? tipos?.length: 0}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-item>
+</ion-content>

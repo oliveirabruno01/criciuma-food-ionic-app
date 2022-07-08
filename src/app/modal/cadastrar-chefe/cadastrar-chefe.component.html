@@ -1,0 +1,29 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>{{action === 'update' ? 'Atualizar': 'Cadastrar'}} Chefe</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-item>
+  <ion-label position="floating">{{action === 'update' ? 'Novo nome:': 'Nome:' }}</ion-label>
+  <ion-input [(ngModel)]="name"
+  [ngModelOptions]="{standalone: true}" [placeholder]=" action === 'update' ? _chefe.name :'' "></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">{{action === 'update' ? 'Editar descrição:': 'Descrição:' }}</ion-label>
+  <ion-input autocomplete [(ngModel)]="descricao"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _chefe.descricao: ''"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">{{action === 'update' ? 'Atualizar experiência:': 'Anos de experiência:' }}</ion-label>
+  <ion-input [(ngModel)]="anosExperiencia"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _chefe.anosExperiencia: ''" type="number" inputmode="numeric"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">{{action === 'update' ? 'Atualizar documento:': 'Documento geral:' }}</ion-label>
+  <ion-input [(ngModel)]="documentoGeral"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _chefe.documentoGeral: ''"></ion-input>
+</ion-item>
+<ion-button expand="block" (click)="cadastrarChefe()">{{action === 'update' ? 'ATUALIZAR': 'CADASTRAR'}}</ion-button>

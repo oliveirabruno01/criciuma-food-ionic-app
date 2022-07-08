@@ -1,0 +1,38 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Cadastrar Restaurante</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-item>
+  <ion-label position="floating">Nome Restaurante</ion-label>
+  <ion-input [(ngModel)]="name"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _restaurante.name: ''"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Endereço</ion-label>
+  <ion-input [(ngModel)]="address"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _restaurante.address: ''"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Bairro</ion-label>
+  <ion-input [(ngModel)]="district"
+  [ngModelOptions]="{standalone: true}" [placeholder]="action === 'update' ? _restaurante.district: ''"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Tipo de Cozinha</ion-label>
+  <ion-select interface="alert" [(ngModel)]="id_cozinha_tipo"
+  [ngModelOptions]="{standalone: true}">
+    <ion-select-option *ngFor="let item of tipos_cozinha" [value]="item.id">{{item.name}}</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Chefe</ion-label>
+  <ion-select [interfaceOptions]="alertController" interface="alert" [(ngModel)]="id_chefe"
+  [ngModelOptions]="{standalone: true}">
+    <ion-select-option *ngFor="let item of chefes" [value]="item.id">{{item.name}}</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-button expand="block" (click)="cadastrarRestaurante()">Cadastrar</ion-button>

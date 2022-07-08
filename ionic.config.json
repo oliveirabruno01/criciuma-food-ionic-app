@@ -1,0 +1,7 @@
+{
+  "name": "Criciuma Food",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,5 @@
+{
+    "serverurl": "http://localhost:8080/javaserver2-1.2-SNAPSHOT/resources/chefes",
+    "textfile": "assets/textfile.txt",
+    "date": "2020-01-29"
+  }

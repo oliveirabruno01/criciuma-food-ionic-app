@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Restaurantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let item of restaurantes; let i = index">
+      <ion-item>
+        <ion-label>
+          <h2>{{ item.name }}</h2>
+          <p>Endereço: {{item.address}}, {{ item.district }}</p>
+          <p>Chefe: {{ chefeBy(item.idChefe) }} </p>
+          <p>Tipo cozinha: {{ cozinhaBy(item.idCozinhaTipo) }}</p>
+          <p>Id: {{ item.id }}</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="ion-primary" (click)="alterarRestaurante(item)">
+            <ion-icon md="pencil-outline"></ion-icon>
+          </ion-button>
+          <ion-button  color="ion-primary" (click)="excluirRestaurante(item.id)">
+            <ion-icon md="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button (click)="adicionarRestaurante()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

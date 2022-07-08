@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chefes</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of chefes; let i = index">
+      <ion-item>
+        <ion-label>
+          <h2>{{item.name}} 
+            <p class="ion-text-center">{{ item.descricao}}</p>
+            <p>Experiência: {{ item.anosExperiencia}}</p>
+          </h2>
+        </ion-label>
+        <ion-button slot="end" color="ion-primary" (click)="excluirChefe(item.id)">
+          <ion-icon md="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button slot="end" color="ion-primary" (click)="alterarChefe(item)">
+          <ion-icon md="pencil-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button  (click)="adicionarChefe()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
